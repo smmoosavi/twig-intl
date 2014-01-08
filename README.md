@@ -27,7 +27,7 @@ $ php composer.phar install
 
 ## How to use
 
-Do everything required for [twig](http://twig.sensiolabs.org/doc/intro.html) and add following line:
+Do everything required for [twig](http://twig.sensiolabs.org/doc/intro.html) and add the following line:
 
 ```php
 $twig->addExtension(new \smmoosavi\util\twigintl\Extension_Intl('fa_IR', 'persian')); // use your locale and calendar
@@ -101,21 +101,21 @@ Output:
 
 ```
 functions:<br>
-{{ lDateTime(test_date) }}<br>
-{{ lTime(test_date) }}<br>
-{{ lDate(test_date) }}<br>
-{{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
-{{ lNum(3343.3) }}<br>
-{{ lNum(3343) }}<br>
-{{ lNum(-2) }}<br>
+۱۳۹۲/۱۰/۱۸ ۱۶:۰۰<br>
+۱۶:۰۰:۰۸<br>
+چهارشنبه ۱۸ دی ۱۳۹۲<br>
+۱۳۹۲/۱۰/۱۸ ۱۶:۰۰ (وقت عادی ایران)<br>
+۳٬۳۴۳٫۳<br>
+۳٬۳۴۳<br>
+-۲<br>
 filters:<br>
-{{ test_date|lDateTime }}<br>
-{{ test_date|lTime }}<br>
-{{ test_date|lDate }}<br>
-{{ test_date|lFormat('y/M/d HH:mm (zzzz)') }}<br>
-{{ 3343.3|lNum }}<br>
-{{ 3343|lNum }}<br>
-{{ (-2)|lNum }}<br>
+۱۳۹۲/۱۰/۱۸ ۱۶:۰۰<br>
+۱۶:۰۰:۰۸<br>
+چهارشنبه ۱۸ دی ۱۳۹۲<br>
+۱۳۹۲/۱۰/۱۸ ۱۶:۰۰ (وقت عادی ایران)<br>
+۳٬۳۴۳٫۳<br>
+۳٬۳۴۳<br>
+-۲<br>
 ```
 
 Template:
