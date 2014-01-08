@@ -81,12 +81,12 @@ Template:
 ```
 functions:<br>
 {{ lDateTime(test_date) }}<br>
-{{ lTime(test_date)}}<br>
-{{ lDate(test_date)}}<br>
-{{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-{{lNum(3343.3)}}<br>
-{{lNum(3343)}}<br>
-{{lNum(-2)}}<br>
+{{ lTime(test_date) }}<br>
+{{ lDate(test_date) }}<br>
+{{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+{{lNum(3343.3) }}<br>
+{{lNum(3343) }}<br>
+{{lNum(-2) }}<br>
 filters:<br>
 {{ test_date|lDateTime }}<br>
 {{ test_date|lTime }}<br>
@@ -101,50 +101,50 @@ Output:
 
 ```
 functions:<br>
-۱۳۹۲/۱۰/۱۸ ۱۵:۰۸<br>
-۱۵:۰۸:۰۸<br>
-چهارشنبه ۱۸ دی ۱۳۹۲<br>
-۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
-۳٬۳۴۳٫۳<br>
-۳٬۳۴۳<br>
--۲<br>
+{{ lDateTime(test_date) }}<br>
+{{ lTime(test_date) }}<br>
+{{ lDate(test_date) }}<br>
+{{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+{{ lNum(3343.3) }}<br>
+{{ lNum(3343) }}<br>
+{{ lNum(-2) }}<br>
 filters:<br>
-۱۳۹۲/۱۰/۱۸ ۱۵:۰۸<br>
-۱۵:۰۸:۰۸<br>
-چهارشنبه ۱۸ دی ۱۳۹۲<br>
-۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
-۳٬۳۴۳٫۳<br>
-۳٬۳۴۳<br>
--۲<br>
+{{ test_date|lDateTime }}<br>
+{{ test_date|lTime }}<br>
+{{ test_date|lDate }}<br>
+{{ test_date|lFormat('y/M/d HH:mm (zzzz)') }}<br>
+{{ 3343.3|lNum }}<br>
+{{ 3343|lNum }}<br>
+{{ (-2)|lNum }}<br>
 ```
 
 Template:
 ```
-ex1: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+ex1: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% locale -%}
-    ex2: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex2: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR' -%}
-    ex3: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex3: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@persian' -%}
-    ex4: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex4: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@islamic@utc' -%}
-    ex5: {{ lFormat(test_date,'EEEE d MMMM y HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex5: {{ lFormat(test_date,'EEEE d MMMM y HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@null@utc' -%}
-    ex6: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex6: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'null@null@utc' -%}
-    ex7: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex7: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 ```
 
@@ -165,3 +165,7 @@ ex6: ۲۰۱۴/۱/۸ ۱۱:۳۸ (GMT)<br>
 ex7: 2014/1/8 11:38 (GMT)<br>
      3,343.3<br>
 ```
+
+## TODO
+
+enhance argument passing of `locale` tag.

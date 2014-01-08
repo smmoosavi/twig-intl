@@ -34,16 +34,16 @@ $twig = new Twig_Environment($loader);
 $twig->addExtension(new \smmoosavi\util\twigintl\Extension_Intl('fa_IR', 'persian'));
 
 
-echo "example lDate function:\n";
+echo "examples:\n";
 echo $twig->render("
 functions:<br>
 {{ lDateTime(test_date) }}<br>
-{{ lTime(test_date)}}<br>
-{{ lDate(test_date)}}<br>
-{{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-{{lNum(3343.3)}}<br>
-{{lNum(3343)}}<br>
-{{lNum(-2)}}<br>
+{{ lTime(test_date) }}<br>
+{{ lDate(test_date) }}<br>
+{{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+{{ lNum(3343.3) }}<br>
+{{ lNum(3343) }}<br>
+{{ lNum(-2) }}<br>
 filters:<br>
 {{ test_date|lDateTime }}<br>
 {{ test_date|lTime }}<br>
@@ -59,31 +59,31 @@ filters:<br>
 
 echo "\n\n";
 echo $twig->render("
-ex1: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+ex1: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% locale -%}
-    ex2: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex2: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR' -%}
-    ex3: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex3: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@persian' -%}
-    ex4: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex4: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@islamic@utc' -%}
-    ex5: {{ lFormat(test_date,'EEEE d MMMM y HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex5: {{ lFormat(test_date,'EEEE d MMMM y HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'fa_IR@null@utc' -%}
-    ex6: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex6: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 {% locale 'null@null@utc' -%}
-    ex7: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
-     {{lNum(3343.3)}}<br>
+    ex7: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)') }}<br>
+     {{ lNum(3343.3) }}<br>
 {% endlocale %}
 ", array('test_date' => $test_date));
 echo "\n\n";
