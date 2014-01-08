@@ -58,15 +58,18 @@ echo $twig->render("{{ lDateTime(test_date) }}", array('test_date' => $test_date
 ### Functions
 
 * `lDate(test_date)`
-* `lDateTime('Hi')`
-* `lTime('Hi')`
-* `lFormat('Hi')`
+* `lDateTime(test_date)`
+* `lTime(test_date)`
+* `lFormat(test_date)`
+* `lNum(number)`
 
 ### Filters
 
-* `'Hi'|lDateTime`
-* `'Hi'|lDate`
-* `'Hi'|lTime`
+* `test_date|lDateTime`
+* `test_date|lDate`
+* `test_date|lTime`
+* `test_date|lFormat(format)`
+* `number|lNum`
 
 ### Tags
 
@@ -98,22 +101,21 @@ Output:
 
 ```
 functions:<br>
-۱۳۹۲/۱۰/۱۸ ۱۴:۵۴<br>
-۱۴:۵۴:۱۶<br>
+۱۳۹۲/۱۰/۱۸ ۱۵:۰۸<br>
+۱۵:۰۸:۰۸<br>
 چهارشنبه ۱۸ دی ۱۳۹۲<br>
-۱۳۹۲/۱۰/۱۸ ۱۴:۵۴ (وقت عادی ایران)<br>
+۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
 ۳٬۳۴۳٫۳<br>
 ۳٬۳۴۳<br>
 -۲<br>
 filters:<br>
-۱۳۹۲/۱۰/۱۸ ۱۴:۵۴<br>
-۱۴:۵۴:۱۶<br>
+۱۳۹۲/۱۰/۱۸ ۱۵:۰۸<br>
+۱۵:۰۸:۰۸<br>
 چهارشنبه ۱۸ دی ۱۳۹۲<br>
-۱۳۹۲/۱۰/۱۸ ۱۴:۵۴ (وقت عادی ایران)<br>
+۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
 ۳٬۳۴۳٫۳<br>
 ۳٬۳۴۳<br>
 -۲<br>
-۲<br>
 ```
 
 Template:
@@ -148,18 +150,18 @@ ex1: {{ lFormat(test_date,'y/M/d HH:mm (zzzz)')}}<br>
 
 Output:
 ```
-ex1: ۱۳۹۲/۱۰/۱۸ ۱۴:۵۸ (وقت عادی ایران)<br>
+ex1: ۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
      ۳٬۳۴۳٫۳<br>
-ex2: 2014/1/8 14:58 (Iran Standard Time)<br>
+ex2: 2014/1/8 15:08 (Iran Standard Time)<br>
      3,343.3<br>
-ex3: ۲۰۱۴/۱/۸ ۱۴:۵۸ (وقت عادی ایران)<br>
+ex3: ۲۰۱۴/۱/۸ ۱۵:۰۸ (وقت عادی ایران)<br>
      ۳٬۳۴۳٫۳<br>
-ex4: ۱۳۹۲/۱۰/۱۸ ۱۴:۵۸ (وقت عادی ایران)<br>
+ex4: ۱۳۹۲/۱۰/۱۸ ۱۵:۰۸ (وقت عادی ایران)<br>
      ۳٬۳۴۳٫۳<br>
-ex5: چهارشنبه ۷ ربیع الاول ۱۴۳۵ ۱۱:۲۸ (GMT)<br>
+ex5: چهارشنبه ۷ ربیع الاول ۱۴۳۵ ۱۱:۳۸ (GMT)<br>
      ۳٬۳۴۳٫۳<br>
-ex6: ۲۰۱۴/۱/۸ ۱۱:۲۸ (GMT)<br>
+ex6: ۲۰۱۴/۱/۸ ۱۱:۳۸ (GMT)<br>
      ۳٬۳۴۳٫۳<br>
-ex7: 2014/1/8 11:28 (GMT)<br>
+ex7: 2014/1/8 11:38 (GMT)<br>
      3,343.3<br>
 ```

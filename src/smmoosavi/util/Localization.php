@@ -12,6 +12,12 @@ use IntlDateFormatter;
 
 class Localization
 {
+
+
+    public static $default_date_pattern = 'EEEE d MMMM y';
+    public static $default_time_pattern = 'HH:mm:ss';
+    public static $default_datetime_pattern = 'y/M/d H:mm';
+
     function __construct($locale = null, $calendar = null, $timezone = null)
     {
         $this->local = $locale;
@@ -43,7 +49,7 @@ class Localization
     function lDate($date, $pattern = null)
     {
         if (is_null($pattern)) {
-            $pattern = 'EEEE d MMMM y';
+            $pattern = self::$default_date_pattern;
         }
         return $this->lFormat($date, $pattern);
     }
@@ -51,7 +57,7 @@ class Localization
     function lTime($date, $pattern = null)
     {
         if (is_null($pattern)) {
-            $pattern = 'HH:mm:ss';
+            $pattern = self::$default_time_pattern;
         }
         return $this->lFormat($date, $pattern);
     }
@@ -59,7 +65,7 @@ class Localization
     function lDateTime($date, $pattern = null)
     {
         if (is_null($pattern)) {
-            $pattern = 'yyyy/MM/dd HH:mm';
+            $pattern = self::$default_datetime_pattern;
         }
         return $this->lFormat($date, $pattern);
     }
